@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Main page -->
+  <url>
+    <loc>https://dspace.iplweb.pl</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dspace.iplweb.pl?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dspace.iplweb.pl?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dspace.iplweb.pl?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dspace.iplweb.pl?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dspace.iplweb.pl?lang=es"/>
+  </url>
+  
+  <!-- English version -->
+  <url>
+    <loc>https://dspace.iplweb.pl?lang=en</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dspace.iplweb.pl?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dspace.iplweb.pl?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dspace.iplweb.pl?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dspace.iplweb.pl?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dspace.iplweb.pl?lang=es"/>
+  </url>
+  
+  <!-- Polish version -->
+  <url>
+    <loc>https://dspace.iplweb.pl?lang=pl</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dspace.iplweb.pl?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dspace.iplweb.pl?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dspace.iplweb.pl?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dspace.iplweb.pl?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dspace.iplweb.pl?lang=es"/>
+  </url>
+  
+  <!-- German version -->
+  <url>
+    <loc>https://dspace.iplweb.pl?lang=de</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dspace.iplweb.pl?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dspace.iplweb.pl?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dspace.iplweb.pl?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dspace.iplweb.pl?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dspace.iplweb.pl?lang=es"/>
+  </url>
+  
+  <!-- French version -->
+  <url>
+    <loc>https://dspace.iplweb.pl?lang=fr</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dspace.iplweb.pl?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dspace.iplweb.pl?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dspace.iplweb.pl?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dspace.iplweb.pl?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dspace.iplweb.pl?lang=es"/>
+  </url>
+  
+  <!-- Spanish version -->
+  <url>
+    <loc>https://dspace.iplweb.pl?lang=es</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://dspace.iplweb.pl?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://dspace.iplweb.pl?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://dspace.iplweb.pl?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://dspace.iplweb.pl?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://dspace.iplweb.pl?lang=es"/>
+  </url>
+</urlset>
