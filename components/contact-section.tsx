@@ -20,6 +20,19 @@ export function ContactSection() {
     }
   }, [])
 
+  const handleCalendlyClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    // Open Calendly inline embed
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: 'https://calendly.com/mpasternak/dspace/'
+      })
+    } else {
+      // Fallback: open in new tab
+      window.open('https://calendly.com/mpasternak/dspace/', '_blank')
+    }
+  }
+
   return (
     <section id="contact" className="py-20 sm:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-background" />
@@ -87,7 +100,7 @@ export function ContactSection() {
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">{t.contact.bookMeetingDescription}</p>
               <a
-                href="https://calendly.com/mpasternak"
+                href="https://calendly.com/mpasternak/dspace/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group/btn inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/25 w-full"

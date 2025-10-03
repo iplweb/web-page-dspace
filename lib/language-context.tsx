@@ -1,10 +1,12 @@
 "use client"
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from "react"
+import { usePreloader } from "@/lib/preloader-context"
 
 type LanguageContextType = {
   language: string
   setLanguage: (lang: string) => void
+  isLanguageReady: boolean
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
@@ -39,24 +41,44 @@ function detectBrowserLanguage(): string {
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState("en")
+  const [language, setLanguageState] = useState<string | null>(null)
+  const [isLanguageReady, setIsLanguageReady] = useState(false)
+  const { setLanguageLoaded } = usePreloader()
 
   useEffect(() => {
-    const savedLang = localStorage.getItem("language")
-    if (savedLang) {
-      setLanguageState(savedLang)
-    } else {
-      const detectedLang = detectBrowserLanguage()
-      setLanguageState(detectedLang)
+    // Determine language synchronously on mount
+    let finalLanguage = "en"
+
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("language")
+      if (savedLang) {
+        finalLanguage = savedLang
+      } else {
+        finalLanguage = detectBrowserLanguage()
+      }
     }
-  }, [])
+
+    // Set the language immediately and mark as ready
+    setLanguageState(finalLanguage)
+    setIsLanguageReady(true)
+    setLanguageLoaded()
+  }, [setLanguageLoaded])
 
   const setLanguage = (lang: string) => {
     setLanguageState(lang)
     localStorage.setItem("language", lang)
   }
 
-  return <LanguageContext.Provider value={{ language, setLanguage }}>{children}</LanguageContext.Provider>
+  // Don't render children until language is determined
+  if (!isLanguageReady || !language) {
+    return null
+  }
+
+  return (
+    <LanguageContext.Provider value={{ language, setLanguage, isLanguageReady }}>
+      {children}
+    </LanguageContext.Provider>
+  )
 }
 
 export function useLanguage() {

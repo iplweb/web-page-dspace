@@ -5,6 +5,8 @@ import Script from "next/script"
 
 import "./globals.css"
 import { LanguageProvider } from "@/lib/language-context"
+import { PreloaderProvider } from "@/lib/preloader-context"
+import { PagePreloader } from "@/components/page-preloader"
 import { Analytics } from "@vercel/analytics/react"
 
 // Initialize fonts
@@ -146,8 +148,15 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
         <Suspense fallback={<div>Loading...</div>}>
-          <LanguageProvider>{children}</LanguageProvider>
-          <Analytics />
+          <PreloaderProvider>
+            <LanguageProvider>
+              <PagePreloader />
+              <div className="page-content-fade-in">
+                {children}
+              </div>
+              <Analytics />
+            </LanguageProvider>
+          </PreloaderProvider>
         </Suspense>
       </body>
     </html>

@@ -24,6 +24,14 @@ export function Footer() {
               iplweb.pl
             </a>
             <a
+              href="https://twitter.com/mpasternak79"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Twitter
+            </a>
+            <a
               href="https://github.com/mpasternak/dspace-9-installer-ansible"
               target="_blank"
               rel="noopener noreferrer"

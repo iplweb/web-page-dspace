@@ -127,7 +127,7 @@
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-10px);
   }
 }
 
@@ -146,7 +146,7 @@
 @keyframes slide-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -154,8 +154,119 @@
   }
 }
 
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blur-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
 }
 
 .animate-pulse-glow {
@@ -163,29 +274,248 @@
 }
 
 .animate-slide-up {
-  animation: slide-up 0.6s ease-out forwards;
+  animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-fill-mode: both;
 }
 
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-fill-mode: both;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-fill-mode: both;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-fill-mode: both;
+}
+
+.animate-slide-in-bottom {
+  animation: slide-in-bottom 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-fill-mode: both;
+}
+
+.animate-blur-in {
+  animation: blur-in 1s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-fill-mode: both;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(120, 119, 198, 0.3);
+}
+
+/* Stagger delays for sequential animations */
 .stagger-1 {
-  animation-delay: 0.1s;
+  animation-delay: 0.15s;
+  animation-fill-mode: both;
 }
 
 .stagger-2 {
-  animation-delay: 0.2s;
+  animation-delay: 0.3s;
+  animation-fill-mode: both;
 }
 
 .stagger-3 {
-  animation-delay: 0.3s;
+  animation-delay: 0.45s;
+  animation-fill-mode: both;
 }
 
 .stagger-4 {
-  animation-delay: 0.4s;
+  animation-delay: 0.6s;
+  animation-fill-mode: both;
 }
 
 .stagger-5 {
-  animation-delay: 0.5s;
+  animation-delay: 0.75s;
+  animation-fill-mode: both;
 }
 
 .stagger-6 {
-  animation-delay: 0.6s;
+  animation-delay: 0.9s;
+  animation-fill-mode: both;
+}
+
+/* Scroll-triggered animations */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-scale.in-view {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scroll-blur {
+  opacity: 0;
+  filter: blur(5px);
+  transition: opacity 0.6s ease, filter 0.6s ease;
+}
+
+.scroll-blur.in-view {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Preloader styles */
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.preloader-throbber {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+}
+
+.throbber-ring {
+  position: absolute;
+  inset: 0;
+  border: 4px solid;
+  border-radius: 50%;
+}
+
+.throbber-ring-bg {
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+.throbber-ring-active {
+  border-color: hsl(var(--primary));
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+.preloader-text {
+  text-align: center;
+  color: hsl(var(--muted-foreground));
+}
+
+.loading-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.loading-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: hsl(var(--primary));
+  border-radius: 50%;
+  animation: bounce-dot 1.4s ease-in-out infinite both;
+}
+
+.loading-dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-dot {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Prevent content jump during preload */
+.preloader-active body {
+  overflow: hidden;
+}
+
+/* Fade in animation for page content after preload */
+.page-content-fade-in {
+  animation: fade-in-scale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better smooth scrolling for webkit browsers */
+@supports (-webkit-appearance: none) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
 }
