@@ -3,35 +3,10 @@
 import { useLanguage } from "@/lib/language-context"
 import { translations } from "@/lib/translations"
 import { Mail, Phone, Globe, Calendar, ArrowRight } from "lucide-react"
-import { useEffect } from "react"
 
 export function ContactSection() {
   const { language } = useLanguage()
   const t = translations[language]
-
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.src = "https://assets.calendly.com/assets/external/widget.js"
-    script.async = true
-    document.body.appendChild(script)
-
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
-
-  const handleCalendlyClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    // Open Calendly inline embed
-    if (window.Calendly) {
-      window.Calendly.initPopupWidget({
-        url: 'https://calendly.com/mpasternak/dspace/'
-      })
-    } else {
-      // Fallback: open in new tab
-      window.open('https://calendly.com/mpasternak/dspace/', '_blank')
-    }
-  }
 
   return (
     <section id="contact" className="py-20 sm:py-32 relative overflow-hidden">
@@ -61,8 +36,8 @@ export function ContactSection() {
                   </div>
                   <div className="flex-1">
                     <p className="font-medium mb-1 text-sm text-muted-foreground">{t.contact.email}</p>
-                    <a href="mailto:michal.dtz@gmail.com" className="text-primary hover:underline font-medium">
-                      michal.dtz@gmail.com
+                    <a href="mailto:m+dspace@iplweb.pl" className="text-primary hover:underline font-medium">
+                      m+dspace@iplweb.pl
                     </a>
                   </div>
                 </div>
@@ -99,6 +74,7 @@ export function ContactSection() {
                 <h3 className="text-2xl font-semibold">{t.contact.bookMeeting}</h3>
               </div>
               <p className="text-muted-foreground mb-6 leading-relaxed">{t.contact.bookMeetingDescription}</p>
+
               <a
                 href="https://calendly.com/mpasternak/dspace/"
                 target="_blank"
