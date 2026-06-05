@@ -32,7 +32,7 @@ export function Footer() {
               Twitter
             </a>
             <a
-              href="https://github.com/mpasternak/dspace-9-installer-ansible"
+              href="https://github.com/mpasternak/dspace-installer"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors"

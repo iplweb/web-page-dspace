@@ -34,13 +34,13 @@ export function ExperienceSection() {
                   <div className="flex-1">
                     <p className="text-lg leading-relaxed mb-6 group-hover:text-foreground/90 transition-colors">{t.description}</p>
                     <a
-                      href="http://github.com/mpasternak/dspace-9-installer-ansible/"
+                      href="https://github.com/mpasternak/dspace-installer/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-lg hover:from-gray-900 hover:to-black transition-all duration-500 shadow-lg hover:shadow-2xl hover:scale-105 group/btn"
                     >
                       <Github className="w-5 h-5 group-hover/btn:rotate-12 transition-transform" />
-                      <span className="font-medium">github.com/mpasternak/dspace-9-installer-ansible</span>
+                      <span className="font-medium">github.com/mpasternak/dspace-installer</span>
                       <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </a>
                   </div>
